@@ -26,10 +26,13 @@ public class DeleteStudentDemo {
 			// retrieve a student based on id: primary key
 			System.out.println("Getting the student id: " + studentId);
 
-			Student myStudent = session.get(Student.class, studentId);
+			// Student myStudent = session.get(Student.class, studentId);
+			//
+			// // delete the student
+			// session.delete(myStudent);
 
-			// delete the student
-			session.delete(myStudent);
+			// delete student with id = 3
+			session.createQuery("delete from Student where id = 3").executeUpdate();
 
 			// commit transaction
 			session.getTransaction().commit();
